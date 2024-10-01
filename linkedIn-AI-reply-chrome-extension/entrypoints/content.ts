@@ -57,7 +57,7 @@ import ImageButton from "./ImageBtn";
 import React from "react";
 
 export default defineContentScript({
-  matches: ["<all_urls>"],
+  matches: ["https://www.linkedin.com/*"],
 
   main(ctx) {
     const ui = createIntegratedUi(ctx, {

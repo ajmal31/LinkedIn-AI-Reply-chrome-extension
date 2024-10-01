@@ -1,15 +1,13 @@
-import React from "react";
-import App from "./popup/App";
+import PromptBar from "./components/PromptBar";
+import "./index.css"
 
 const ImageButton = () => {
 
-  const [showApp, setShowApp] = useState(false);
-  const handleClick = () => {
-    // alert("clicked")
-    setShowApp(!showApp);
-    console.log("Status of showApp",showApp)
-  };
- console.log("component renderes")
+  const [showModal,setShowModal]=useState(false)
+
+  const handleModal=()=>{
+    setShowModal(!showModal)
+  }
   return (
     <>
       <div
@@ -19,12 +17,11 @@ const ImageButton = () => {
           right: "10px",
           zIndex: 10,
         }}
-        className=""
       >
         <img
           src="https://imgs.search.brave.com/iowLll4bKVM1hAXSnnf7Ec6SR0Qd6nR9eHQswwXfxmM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50aGVyZXNhbmFp/Zm9ydGhhdC5jb20v/aWNvbnMvaWNvbi1n/ZW5lcmF0ZS5zdmc_/aGVpZ2h0PTIwNw"
           alt="Clickable"
-          onClick={handleClick}
+          onClick={handleModal}
           style={{
             width: "30px",
             height: "30px",
@@ -32,10 +29,10 @@ const ImageButton = () => {
             cursor: "pointer",
           }}
           contentEditable="false"
+          className=""
         />
       </div>
-      {console.log("what's happeing for App ????")}
-      {showApp && <App />}
+      {showModal && <PromptBar onClose={handleModal} />}
     </>
   );
 };
