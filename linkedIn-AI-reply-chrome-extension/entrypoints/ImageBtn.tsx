@@ -1,15 +1,17 @@
 import PromptBar from "./components/PromptBar";
-import "./index.css"
+import "./index.css";
+import { useState } from "react";
 
 const ImageButton = () => {
+  const [showModal, setShowModal] = useState(false);
 
-  const [showModal,setShowModal]=useState(false)
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
 
-  const handleModal=()=>{
-    setShowModal(!showModal)
-  }
   return (
     <>
+    {console.log("image button showed")}
       <div
         style={{
           position: "absolute",
@@ -29,7 +31,6 @@ const ImageButton = () => {
             cursor: "pointer",
           }}
           contentEditable="false"
-          className=""
         />
       </div>
       {showModal && <PromptBar onClose={handleModal} />}
