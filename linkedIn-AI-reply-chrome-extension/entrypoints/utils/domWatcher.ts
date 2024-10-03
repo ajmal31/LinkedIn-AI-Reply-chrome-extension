@@ -1,3 +1,4 @@
+// This function will watch dom ( no matter the page refreshed or not)
 export function watchDomChanges(ctx: any, selector: any, callbacks: any) {
     let prevAnchor: HTMLElement | undefined;
   

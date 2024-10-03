@@ -3,16 +3,18 @@ import { useState } from "react";
 
 const ImageButton = () => {
   const [showModal, setShowModal] = useState(false);
-
+   
+  // Handling prompt bar modal
   const handleModal = () => {
     setShowModal(!showModal);
   };
-
+  
   return (
     <>
       {showModal ? (
         <PromptBar onClose={handleModal} />
       ) : (
+        // AI genrating icon
         <div
           className="absolute bottom-[10px] right-[10px] z-10"
         >
