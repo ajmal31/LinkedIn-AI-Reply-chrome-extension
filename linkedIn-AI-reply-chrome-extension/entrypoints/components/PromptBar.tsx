@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom";
+import "../index.css"
 
 type PromptBarProps = {
   onClose: () => void;
@@ -78,17 +79,17 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
           </div>
           <div className="flex justify-end">
             {generate ? (
-              <div className="flex gap-2 ">
+              <div className="flex gap-2  ">
                 {showDummy && (
                   <button
-                    className="bg-blue-600 px-4 py-2 rounded-md text-white"
+                    className="px-4 py-2 rounded-md text-white bg-blue-600"
                     onClick={handleInsert}
                   >
-                    Insert ⬇
+                    ⤵ Insert 
                   </button>
                 )}
                 <button className="bg-blue-600 px-4 py-2 rounded-md text-white">
-                  Regenerate
+                  🔁 Regenerate
                 </button>
               </div>
             ) : (
