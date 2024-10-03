@@ -1,6 +1,6 @@
 {
-  "name": "AI for linkedIn Messages",
-  "description": "manifest.json description",
+  "name": "LinkedIn AI Reply",
+  "description": "This is a Chrome extension for replying to messages using AI",
   "private": true,
   "version": "0.0.0",
   "type": "module",
