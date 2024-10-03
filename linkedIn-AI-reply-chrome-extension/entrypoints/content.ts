@@ -32,7 +32,7 @@ export default defineContentScript({
           // Render the React component inside the container
           const root = ReactDOM.createRoot(imgContainer);
           root.render(React.createElement(ImageButton as typeof ImageButton));
-        }, 10000);
+        }, 5000);
       },
       onRemove: (root) => {
         // root?.unmount();

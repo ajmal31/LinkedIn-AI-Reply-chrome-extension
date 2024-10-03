@@ -7,9 +7,9 @@ export const App=()=>{
   const [count, setCount] = useState(0);
 
   return (
-    <>
-     <h1 className='' >My AI : Hai 👋</h1>
-    </>
+    <div className='bg-red-600'>
+     <h1 className='text-green-800' >My AI : Hai 👋</h1>
+    </div>
   );
 }
 

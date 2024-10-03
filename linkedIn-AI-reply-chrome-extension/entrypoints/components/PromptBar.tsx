@@ -2,8 +2,7 @@ import ReactDOM from "react-dom";
 
 type PromptBarProps = {
   onClose: () => void;
-};
-
+}
 const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
   const [generate, setGenerate] = useState(false);
   const [prompt, setPrompt] = useState("");
@@ -41,15 +40,14 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
     setPrompt("");
     setCopyOfPropmt("");
   };
-
+  
   return ReactDOM.createPortal(
-    <>
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-40 backdrop-blur-md flex justify-center pl-[400px] items-center"
+        className="fixed inset-0 border-4 border-green-800 bg-transparent z-40  flex w-full justify-center items-center"
         onClick={onClose}
       >
         <div
-          className="bg-white flex flex-col gap-4 p-10 rounded-md shadow-lg z-50 w-1/3 border border-black"
+          className="bg-white flex flex-col gap-4 p-10 rounded-md shadow-lg z-50 w-1/3 border-4 border-black"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col p-2 gap-3 border-2 border-gray-300">
@@ -64,7 +62,7 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
               </div>
             )}
             {generate && !showDummy && (
-              <div className=" bg-pink-100 p-2 rounded-md self-end border-black flex justify-end ">
+              <div className=" bg-pink-100 p-2 rounded-md self-end border-4 border-black flex justify-start ">
                 <p>Loading.....</p>
               </div>
             )}
@@ -75,6 +73,7 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
               className="py-2 px-3 border border-gray-300 rounded-md w-full"
               onChange={(e) => setPrompt(e.target.value)}
               value={prompt}
+              
             />
           </div>
           <div className="flex justify-end">
@@ -102,8 +101,7 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
             )}
           </div>
         </div>
-      </div>
-    </>,
+      </div>,
     document.body
   );
 };
