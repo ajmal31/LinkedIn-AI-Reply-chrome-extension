@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import "../index.css"
+import { DUMMY_TEXT } from "../utils/const";
 
 type PromptBarProps = {
   onClose: () => void;
@@ -9,7 +10,7 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
   const [prompt, setPrompt] = useState("");
   const [copyOfPrompt, setCopyOfPropmt] = useState("");
   const [showDummy, setShowDummy] = useState(false);
-  const dummyText = `Thank you for the opportunity! If you have any more questions or if there's anything else I can help you with, feel free to ask.`;
+  
 
   const handleGenerate = () => {
     if (prompt.length > 0) {
@@ -30,9 +31,7 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
       ".msg-form__contenteditable"
     ) as HTMLTextAreaElement;
 
-    textArea.children[0].innerHTML = dummyText;
-
-    // Create and dispatch an 'input' event to simulate typing
+    textArea.children[0].innerHTML = DUMMY_TEXT;
     const inputEvent = new Event("input", { bubbles: true });
     
     textArea.dispatchEvent(inputEvent);
@@ -59,7 +58,7 @@ const PromptBar: React.FC<PromptBarProps> = ({ onClose }) => {
             )}
             {showDummy && (
               <div className=" bg-pink-100 p-2 rounded-md self-end border-black flex justify-end ">
-                <p>{dummyText}</p>
+                <p>{DUMMY_TEXT}</p>
               </div>
             )}
             {generate && !showDummy && (
